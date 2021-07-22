@@ -1,10 +1,10 @@
 import { Meteor } from 'meteor/meteor';
-import { TasksCollection } from '../imports/api/TasksCollection';
+import { TasksCollection } from '/imports/api/TasksCollection';
 
-const insertTask = taskText => TasksCollection.insert({text: taskText});
+const insertTask = taskText => TasksCollection.insert({ text: taskText });
 
 Meteor.startup(() => {
-  if (TasksCollection.find().count() === 0){
+  if (TasksCollection.find().count() === 0) {
     [
       'First Task',
       'Second Task',
@@ -13,6 +13,6 @@ Meteor.startup(() => {
       'Fifth Task',
       'Sixth Task',
       'Seventh Task',
-    ].forEach(insertTask)
+    ].forEach(insertTask);
   }
 });
